@@ -1,0 +1,177 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fbc2eb, #a6c1ee);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+/* Background animation */
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Container Styling */
+.container {
+  background: white;
+  border-radius: 20px;
+  padding: 30px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideIn {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Heading */
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+  font-weight: 700;
+}
+
+/* Input Area */
+.input-area {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.input-area input,
+.input-area button {
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: 2px solid #ddd;
+  transition: all 0.3s ease;
+}
+
+.input-area input:focus {
+  outline: none;
+  border-color: #7f5af0;
+  box-shadow: 0 0 5px #7f5af0;
+}
+
+#add-btn {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#add-btn:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+/* Todo List */
+ul {
+  list-style: none;
+  margin-bottom: 20px;
+  max-height: 300px;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+li {
+  background: linear-gradient(to right, #e0c3fc, #8ec5fc);
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  animation: slideIn 0.3s ease forwards;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+li:hover {
+  background: linear-gradient(to right, #a1c4fd, #c2e9fb);
+  transform: scale(1.01);
+}
+
+li.completed span {
+  text-decoration: line-through;
+  color: gray;
+}
+
+li small {
+  display: block;
+  font-size: 0.75rem;
+  color: #666;
+}
+
+/* Todo Action Buttons */
+.todo-actions button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 10px;
+  font-size: 1.2rem;
+  transition: transform 0.2s;
+}
+
+.todo-actions button:hover {
+  transform: scale(1.3);
+}
+
+.todo-actions .complete {
+  color: #2e7d32;
+}
+
+.todo-actions .delete {
+  color: #c62828;
+}
+
+/* Filters */
+.filters {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.filters button {
+  padding: 8px 16px;
+  border: none;
+  background: #e0e0e0;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filters button:hover {
+  background: #bdbdbd;
+  transform: scale(1.05);
+}
+
+/* Summary Section */
+.summary {
+  text-align: center;
+  margin-top: 20px;
+  color: #444;
+  font-weight: 500;
+  font-size: 1rem;
+}
